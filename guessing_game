@@ -1,0 +1,103 @@
+# MY GUESSING GAME
+# The objective is that there is a secret word and the user must guess the word
+# The user will get 10 guesses with a ticking tracker to show them how many guesses they have left
+# the user will have 3 hints
+
+secret_word = "Jupiter" 
+
+guess_count = 0
+guess_limit = 10
+hint1 = "It exists inside our solar system"
+hint2 = "It's larger than the earth"
+hint3 = "It's named after the Roman God of the Gods"
+
+print ("I am imagining a secret word, your goal is to guess what word I am thinking of in 10 guesses or less. If I feel like your struggling I will give you a hint if you want it. Good luck...")
+user_guess2 = str(input("Take a guess: "))
+user_guess1 = user_guess2.lower()
+user_guess = user_guess1.capitalize()
+    
+while guess_count < 2 and user_guess != secret_word:
+    print ("Try again")
+    guess_count += 1
+    guess_countstr = str(guess_count)
+    print ("This was guess number " + guess_countstr)
+    user_guess2 = str(input("Take a guess: "))
+    user_guess1 = user_guess2.lower()
+    user_guess = user_guess1.capitalize()
+    
+    
+while guess_count == 2:
+    hint_1 = str(input("Not there yet. This was guess number 3. Would you like a hint?: "))
+    guess_count += 1
+    if hint_1 == "yes":
+            print (hint1)
+            user_guess2 = str(input("Take a guess: "))
+            user_guess1 = user_guess2.lower()
+            user_guess = user_guess1.capitalize()     
+    elif hint_1 == "no":
+            print ("Okay, try your luck again")
+            user_guess2 = str(input("Take a guess: "))
+            user_guess1 = user_guess2.lower()
+            user_guess = user_guess1.capitalize()    
+    else:
+        print ("Please anser with yes or no")
+        guess_count = 2
+
+while guess_count > 2 and guess_count <= 4 and user_guess != secret_word:
+    print ("Try again")
+    guess_count += 1
+    guess_countstr = str(guess_count)
+    print ("This was guess number " + guess_countstr)
+    user_guess2 = str(input("Take a guess: "))
+    user_guess1 = user_guess2.lower()
+    user_guess = user_guess1.capitalize()
+    
+while guess_count == 5:
+    hint_2 = str(input("Looks like you are still struggling, but you are getting closer. You are now 6 guesses down. Would you like a second hint?: "))
+    guess_count += 1
+    if hint_2 == "yes":
+            print (hint2)
+            user_guess2 = str(input("Take a guess: "))
+            user_guess1 = user_guess2.lower()
+            user_guess = user_guess1.capitalize()     
+    elif hint_2 == "no":
+            print ("Okay, try your luck again")
+            user_guess2 = str(input("Take a guess: "))
+            user_guess1 = user_guess2.lower()
+            user_guess = user_guess1.capitalize()    
+    else:
+        print ("Please anser with yes or no")
+        guess_count = 5
+ 
+while guess_count > 5 and guess_count <= 7 and user_guess != secret_word:
+    print ("This was guess number " + guess_countstr)
+    print ("Try again")
+    guess_count += 1
+    guess_countstr = str(guess_count)
+    user_guess2 = str(input("Take a guess: "))
+    user_guess1 = user_guess2.lower()
+    user_guess = user_guess1.capitalize()
+    
+while guess_count == 8:
+    print ("This was guess number 8")
+    hint_3 = str(input("You only have one more guess left. Would you like to see the final hint?: "))
+    guess_count += 1
+    if hint_3 == "yes":
+            print (hint3)
+            user_guess2 = str(input("Take a guess: "))
+            user_guess1 = user_guess2.lower()
+            user_guess = user_guess1.capitalize()     
+    elif hint_3 == "no":
+            print ("Okay, try your luck again")
+            user_guess2 = str(input("Take a guess: "))
+            user_guess1 = user_guess2.lower()
+            user_guess = user_guess1.capitalize() 
+    else:
+        print ("Please anser with yes or no")
+        guess_count = 8
+
+if guess_count == 9 and user_guess != secret_word:
+    print ("Unlucky, you failed to guess the secret word. The secret word was Jupiter!")
+        
+if user_guess == secret_word:
+    print ("Well done, you figured it out!")
