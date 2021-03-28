@@ -69,7 +69,7 @@ while guess_count == 5:
         print ("Please anser with yes or no")
         guess_count = 5
  
-while guess_count > 5 and guess_count <= 7 and user_guess != secret_word:
+while guess_count > 6 and guess_count <= 8 and user_guess != secret_word:
     print ("This was guess number " + guess_countstr)
     print ("Try again")
     guess_count += 1
@@ -78,8 +78,8 @@ while guess_count > 5 and guess_count <= 7 and user_guess != secret_word:
     user_guess1 = user_guess2.lower()
     user_guess = user_guess1.capitalize()
     
-while guess_count == 8:
-    print ("This was guess number 8")
+while guess_count == 9:
+    print ("This was guess number 9")
     hint_3 = str(input("You only have one more guess left. Would you like to see the final hint?: "))
     guess_count += 1
     if hint_3 == "yes":
